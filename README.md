@@ -1,27 +1,75 @@
-# Example app with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and Typescript
+# Bimpe
+  Short for Bimipe, which is a yoruba word for "ask me anything", is interactive virtual assistant that help lecturers to provide personalised assistance to students.
+  
+  it is still in development, but you can view the demo here.
+  <a href="https://web-dashboard-ui.vercel.app/"><strong>Explore Demo »</strong></a>
 
-This example features how to use [chakra-ui](https://github.com/chakra-ui/chakra-ui) as the component library within a Next.js app with typescript.
 
-Next.js and chakra-ui have built-in TypeScript declarations, so we'll get autocompletion for their modules straight away.
+  
 
-We are connecting the Next.js `_app.js` with `chakra-ui`'s Provider and theme so the pages can have app-wide dark/light mode. We are also creating some components which shows the usage of `chakra-ui`'s style props.
+<p align="center">
 
-## Deploy your own
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge)
+![Travis (.com) branch](https://img.shields.io/travis/com/Sax-Yusuph/Web-Dashboard-UI/main?style=for-the-badge)
+![Coveralls github](https://img.shields.io/coveralls/github/Sax-Yusuph/Web-Dashboard-UI?logo=c&logoColor=%234caf50&style=for-the-badge)
+![GitHub](https://img.shields.io/github/license/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/Sax-Yusuph/Web-Dashboard-UI?label=Forks&style=for-the-badge)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge&color=%23ff6800)
+</p>
 
-Deploy the example using [Vercel](https://vercel.com):
+## features
+- Answers general FAQ questions that new and existing students can ask
+- Gives course information details such as assignment updates, exam dates
+  ```
+  student: Hi Bimpe, tell me about CSC101?
+  Bimpe: introduction to computer science 101 is handled by Dr. Sax.
+         It is two credits and it is also a compulsory course.
+  student: give me current updates on edt 202.
+  Bimpe: There is a pending assignment and there is also a test on 
+         Tuesday, 19th January  2020.
+  student: what assignment?
+  Bimpe: Research about Chatbots in education, and give your views
+         and justification for its usage and adoption in two pages.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-chakra-ui-typescript&project-name=with-chakra-ui-typescript&repository-name=with-chakra-ui-typescript)
 
-## How to use
+  ``` 
+- gives personalised information about Level Advisers, such as 
+    ```
+  - student:  Hey bimpe, who is Dr. Williams`
+  - Bimpe: Dr. williams is a senior lecturer in Computer science department. and he is also the level adviser for 200l`
+  - student: is he in school?`
+  - Bimpe: no, he is currently not, but you can visit him on monday, around 10am - 12pm`
+    ```
+- learns actively whenever she doesn't have answers for new questions asked.
+- more personalised features would soon be added
 
-### Using `create-next-app`
+<!-- ABOUT THE PROJECT -->
+### Project Structure
+- the `src` folder contains the code for the application
+- `funtions` folder contains program logic
+- `component` folder contains view components
+- `variables.ts` file contains variables and option settings for the application
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
 
-```bash
-npx create-next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
-# or
-yarn create next-app --example with-chakra-ui-typescript with-chakra-ui-typescript-app
-```
+### Technologies Used
+- Dialogflow
+- Nextjs
+- Chakra ui
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+### Built With 
+
+The dashboard was built with the following amazing open source projects
+* [randomuser Api]([randomuser.me/](https://randomuser.me/))
+* [chakra-ui](https://chakra-ui.com)
+* [framer motion](https://www.framer.com/motion/)
+* [nextjs](https://nextjs.org/)
+* [Travis](https://travis-ci.com) for CICD
+* [Vercel](https://vercel.com) for static hosting
+
+
+
+
+
+
+
