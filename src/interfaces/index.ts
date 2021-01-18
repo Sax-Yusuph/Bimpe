@@ -3,30 +3,30 @@ import { Dispatch, SetStateAction } from 'react'
 import { Conversation } from '../models/conversation'
 
 export interface MessageBoxProps {
-	chats: Conversation[]
+  chats: Conversation[]
 }
 
 export interface InputBoxProps {
-	sendMessage: (text: string) => void
-	inputState: string
-	setInput: Dispatch<SetStateAction<string>>
+  sendMessage: (text: string) => void
+  inputState: string
+  setInput: Dispatch<SetStateAction<string>>
 }
 
 export interface IChat {
-	message: string
-	type: string
-	id: string | number
+  message: string
+  type: string
+  id: string | number
 }
 
 export interface ChatProps {
-	chat: Conversation
+  chat: Conversation
 }
 
 export interface QueryProps {
-	url: string
-	queryParams: {
-		text: string
-	}
+  url: string
+  queryParams: {
+    text: string
+  }
 }
 
 export type IContent = google.cloud.dialogflow.v2.Intent.IMessage
