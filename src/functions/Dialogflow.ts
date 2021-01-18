@@ -14,7 +14,7 @@ export default async function queryResponse(query: string) {
 		session: sessionPath,
 		queryInput: {
 			text: {
-				text: query || 'hello',
+				text: query,
 				// The language used by the client (en-US)
 				languageCode: process.env.DIALOGFLOW_SESSION_LANGUAGE_CODE,
 			},
@@ -25,12 +25,12 @@ export default async function queryResponse(query: string) {
 	console.log('Detected intent')
 	const result = responses[0].queryResult
 
-	console.log(`  Query: ${result?.queryText}`)
-	console.log(`  Response: ${result?.fulfillmentText}`)
-	if (result?.intent) {
-		console.log(`  Intent: ${result.intent.displayName}`)
-	} else {
-		console.log(`  No intent matched.`)
-	}
+	// console.log(`  Query: ${result?.queryText}`)
+	// console.log(`  Response: ${result?.fulfillmentText}`)
+	// if (result?.intent) {
+	// 	console.log(`  Intent: ${result.intent.displayName}`)
+	// } else {
+	// 	console.log(`  No intent matched.`)
+	// }
 	return result
 }
