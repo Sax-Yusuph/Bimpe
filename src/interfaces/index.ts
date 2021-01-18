@@ -30,3 +30,6 @@ export interface QueryProps {
 }
 
 export type IContent = google.cloud.dialogflow.v2.Intent.IMessage
+export type QueryResponse = Promise<
+  google.cloud.dialogflow.v2.IQueryResult | null | undefined
+>

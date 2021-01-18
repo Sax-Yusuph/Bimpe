@@ -1,13 +1,17 @@
 import dialogflow from '@google-cloud/dialogflow'
-import { google } from '@google-cloud/dialogflow/build/protos/protos'
 import { v4 as uuidv4 } from 'uuid'
+import { QueryResponse } from '../interfaces'
 
 const sessionId = uuidv4()
+const config = {
+  credentials: {
+    private_key: process.env.GOOGLE_PRIVATE_KEY,
+    client_email: process.env.GOOGLE_CLIENT_EMAIL,
+  },
+}
 
-export default async function queryResponse(
-  query: string
-): Promise<google.cloud.dialogflow.v2.IQueryResult | null | undefined> {
-  const sessionClient = new dialogflow.SessionsClient()
+export default async function queryResponse(query: string): QueryResponse {
+  const sessionClient = new dialogflow.SessionsClient(config)
   if (!process.env.GOOGLE_PROJECT_ID) return
 
   const sessionPath = sessionClient.projectAgentSessionPath(
@@ -21,7 +25,7 @@ export default async function queryResponse(
       text: {
         text: query,
         // The language used by the client (en-US)
-        languageCode: 'en',
+        languageCode: process.env.GOOGLE_LANGUAGE_CODE,
       },
     },
   }
