@@ -1,56 +1,53 @@
-import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+import { useState, useEffect } from 'react'
 
-import { Hero } from '../components/Hero'
 import { Container } from '../components/Container'
-import { Main } from '../components/Main'
-import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
-import { Footer } from '../components/Footer'
+// import { DarkModeSwitch } from '../components/DarkModeSwitch'
+import Header from '../components/Header'
+import MessageBox from '../components/MessageBox'
+import InputBox from '../components/InputBox'
+import { testData } from '../mock/dats'
+import { getMessageResponse } from '../functions/messenger'
+import { QUERY_URL } from '../variables'
+import { Conversation } from '../models/conversation'
 
-const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>typescript</Code>.
-      </Text>
+const Index = () => {
+	const [chats, setChats] = useState<Conversation[]>(testData)
+	const [input, setInput] = useState('')
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
+	const sendMessage = async (text: string) => {
+		// @ step1
+		// first display the user chat
+		let mess = { text: { text: [text] } }
+		const newChat = new Conversation(mess, 'user')
+		console.log(JSON.stringify(newChat, null, 2))
+		console.log(`user: ${newChat.Text}`)
+		setChats(prevChats => [...prevChats, newChat])
+		setInput('')
 
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
+		// @step 2
+		// go out and query the database
+		const query = { url: QUERY_URL, queryParams: { text } }
+		const response: Conversation = await getMessageResponse(query)
+		console.log(JSON.stringify(response, null, 2))
+		console.log(
+			`${JSON.stringify(response.content.text, null, 2)}: ${response.Text}`
+		)
+		setChats(prevChats => [...prevChats, response])
+	}
+	return (
+		<Container height='100vh'>
+			<Header />
+			<Container bg={'blue.800'} w='100%' h='100%'>
+				<MessageBox chats={chats} />
+				<InputBox
+					sendMessage={sendMessage}
+					setInput={setInput}
+					inputState={input}
+				/>
+			</Container>
 
+			{/* <DarkModeSwitch /> */}
+		</Container>
+	)
+}
 export default Index
