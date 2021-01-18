@@ -25,7 +25,7 @@ export default async function queryResponse(query: string): QueryResponse {
       text: {
         text: query,
         // The language used by the client (en-US)
-        languageCode: process.env.GOOGLE_LANGUAGE_CODE,
+        languageCode: process.env.DIALOGFLOW_SESSION_LANGUAGE_CODE,
       },
     },
   }
