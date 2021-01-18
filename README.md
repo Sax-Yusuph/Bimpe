@@ -2,8 +2,8 @@
 
 Short for Bimipe, which is a yoruba word for "ask me anything", is interactive virtual assistant that help lecturers to provide personalised assistance to students.
 
-it is still in development, but you can view the demo here.
-<a href="https://web-dashboard-ui.vercel.app/"><strong>Explore Demo »</strong></a>
+It is still in development, but you can view the demo here.
+<a href="https://bimpe.vercel.app/"><strong>Explore Demo »</strong></a>
 
 <p align="center">
 
