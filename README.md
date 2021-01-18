@@ -57,16 +57,6 @@
 - Chakra ui
 
 
-### Built With 
-
-The dashboard was built with the following amazing open source projects
-* [randomuser Api]([randomuser.me/](https://randomuser.me/))
-* [chakra-ui](https://chakra-ui.com)
-* [framer motion](https://www.framer.com/motion/)
-* [nextjs](https://nextjs.org/)
-* [Travis](https://travis-ci.com) for CICD
-* [Vercel](https://vercel.com) for static hosting
-
 
 
 

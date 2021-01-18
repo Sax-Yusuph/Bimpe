@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import { Container } from '../components/Container'
 // import { DarkModeSwitch } from '../components/DarkModeSwitch'
@@ -10,44 +10,39 @@ import { getMessageResponse } from '../functions/messenger'
 import { QUERY_URL } from '../variables'
 import { Conversation } from '../models/conversation'
 
-const Index = () => {
-	const [chats, setChats] = useState<Conversation[]>(testData)
-	const [input, setInput] = useState('')
+const Index = (): JSX.Element => {
+  const [chats, setChats] = useState<Conversation[]>(testData)
+  const [input, setInput] = useState('')
 
-	const sendMessage = async (text: string) => {
-		// @ step1
-		// first display the user chat
-		let mess = { text: { text: [text] } }
-		const newChat = new Conversation(mess, 'user')
-		console.log(JSON.stringify(newChat, null, 2))
-		console.log(`user: ${newChat.Text}`)
-		setChats(prevChats => [...prevChats, newChat])
-		setInput('')
+  const sendMessage = async (text: string) => {
+    // @ step1
+    // first display the user chat
+    const mess = { text: { text: [text] } }
+    const newChat = new Conversation(mess, 'user')
+    setChats((prevChats) => [...prevChats, newChat])
+    setInput('')
 
-		// @step 2
-		// go out and query the database
-		const query = { url: QUERY_URL, queryParams: { text } }
-		const response: Conversation = await getMessageResponse(query)
-		console.log(JSON.stringify(response, null, 2))
-		console.log(
-			`${JSON.stringify(response.content.text, null, 2)}: ${response.Text}`
-		)
-		setChats(prevChats => [...prevChats, response])
-	}
-	return (
-		<Container height='100vh'>
-			<Header />
-			<Container bg={'blue.800'} w='100%' h='100%'>
-				<MessageBox chats={chats} />
-				<InputBox
-					sendMessage={sendMessage}
-					setInput={setInput}
-					inputState={input}
-				/>
-			</Container>
+    // @step 2
+    // go out and query the database
+    const query = { url: QUERY_URL, queryParams: { text } }
+    const response: Conversation = await getMessageResponse(query)
+    // console.log(JSON.stringify(response, null, 2))
+    setChats((prevChats) => [...prevChats, response])
+  }
+  return (
+    <Container height="100vh">
+      <Header />
+      <Container bg={'blue.800'} w="100%" h="100%">
+        <MessageBox chats={chats} />
+        <InputBox
+          sendMessage={sendMessage}
+          setInput={setInput}
+          inputState={input}
+        />
+      </Container>
 
-			{/* <DarkModeSwitch /> */}
-		</Container>
-	)
+      {/* <DarkModeSwitch /> */}
+    </Container>
+  )
 }
 export default Index
