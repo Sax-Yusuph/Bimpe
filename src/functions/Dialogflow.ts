@@ -3,18 +3,15 @@ import { v4 as uuidv4 } from 'uuid'
 import { QueryResponse } from '../interfaces'
 
 const sessionId = uuidv4()
-// parse google credentials
-const { privateKey } = JSON.parse(
-  process.env.GOOGLE_PRIVATE_KEY || '{ "privateKey": null }'
-)
+// // parse google credentials
+// const { privateKey } = JSON.parse(
+//   process.env.GOOGLE_PRIVATE_KEY || '{ "privateKey": null }'
+// )
+const cred = process.env.GOOGLE_APPLICATION_CREDENTIALS
+const credentials = cred && JSON.parse(Buffer.from(cred, 'base64').toString())
 
 export default async function queryResponse(query: string): QueryResponse {
-  const sessionClient = new dialogflow.SessionsClient({
-    credentials: {
-      private_key: privateKey,
-      client_email: process.env.GOOGLE_CLIENT_EMAIL,
-    },
-  })
+  const sessionClient = new dialogflow.SessionsClient({ credentials })
   if (!process.env.GOOGLE_PROJECT_ID) return
 
   const sessionPath = sessionClient.projectAgentSessionPath(
