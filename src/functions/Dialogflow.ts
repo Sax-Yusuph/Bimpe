@@ -7,7 +7,7 @@ const sessionId = uuidv4()
 // const { privateKey } = JSON.parse(
 //   process.env.GOOGLE_PRIVATE_KEY || '{ "privateKey": null }'
 // )
-const cred = process.env.GOOGLE_APPLICATION_CREDENTIALS
+const cred = process.env.GCLOUD_CREDENTIALS
 const credentials = cred && JSON.parse(Buffer.from(cred, 'base64').toString())
 
 export default async function queryResponse(query: string): QueryResponse {
