@@ -4,17 +4,17 @@ import { QueryResponse } from '../interfaces'
 
 const sessionId = uuidv4()
 // parse google credentials
-let credentials = {}
-const cred = process.env.GCLOUD_CREDENTIALS
-
-if (cred) {
-  credentials = JSON.parse(Buffer.from(cred, 'base64').toString())
-} else {
-  credentials = {}
-}
+const { privateKey } = JSON.parse(
+  process.env.GOOGLE_PRIVATE_KEY || '{ "privateKey": null }'
+)
 
 export default async function queryResponse(query: string): QueryResponse {
-  const sessionClient = new dialogflow.SessionsClient({ credentials })
+  const sessionClient = new dialogflow.SessionsClient({
+    credentials: {
+      private_key: privateKey,
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+    },
+  })
   if (!process.env.GOOGLE_PROJECT_ID) return
 
   const sessionPath = sessionClient.projectAgentSessionPath(
@@ -28,7 +28,7 @@ export default async function queryResponse(query: string): QueryResponse {
       text: {
         text: query,
         // The language used by the client (en-US)
-        languageCode: process.env.DIALOGFLOW_SESSION_LANGUAGE_CODE,
+        languageCode: 'en',
       },
     },
   }
