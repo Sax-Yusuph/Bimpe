@@ -19,9 +19,13 @@ export default function Header(): JSX.Element {
           objectFit="contain"
           borderRadius="full"
         />
-        <VStack spacing={1} color="white">
-          <Text fontSize="lg">Bimpe</Text>
-          <Text fontSize="sm">online</Text>
+        <VStack spacing={1} color="white" justifyItems="flex-start">
+          <Text fontSize="lg" fontWeight="bold" textShadow="sm">
+            Bimpe
+          </Text>
+          <Text fontSize="sm" mt={-5}>
+            online
+          </Text>
         </VStack>
       </HStack>
     </Flex>
