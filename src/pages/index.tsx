@@ -30,9 +30,15 @@ const Index = (): JSX.Element => {
     setChats((prevChats) => [...prevChats, response])
   }
   return (
-    <Container height="100vh">
+    <Container height="100vh" overflow="hidden">
       <Header />
-      <Container bg={'blue.800'} w="100%" h="100%">
+      <Container
+        bg={'blue.800'}
+        w="100vw"
+        overflow="hidden"
+        h="100vh"
+        // px={1}
+      >
         <MessageBox chats={chats} />
         <InputBox
           sendMessage={sendMessage}

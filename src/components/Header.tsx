@@ -1,20 +1,25 @@
-import { Avatar, Flex, HStack, Text, VStack } from '@chakra-ui/react'
+import { Image, Flex, HStack, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 
 export default function Header(): JSX.Element {
   return (
     <Flex
-      bg="#4e8cff"
-      // boxShadow='0 1px 4px rgba(0,0,0,.2)'
+      bg="#00adbc"
+      backgroundImage="url(/headerbg.png)"
       shadow="md"
       w="100%"
-      p={10}
-      py={3}
-      pos="fixed"
+      p={5}
+      py={2}
     >
       <HStack spacing={3}>
-        <Avatar src="" alt="bot" />
-        <VStack spacing={1}>
+        {/* <Avatar src="/bimpe.png" alt="bot" /> */}
+        <Image
+          src="/bimpe.png"
+          boxSize="64px"
+          objectFit="contain"
+          borderRadius="full"
+        />
+        <VStack spacing={1} color="white">
           <Text fontSize="lg">Bimpe</Text>
           <Text fontSize="sm">online</Text>
         </VStack>

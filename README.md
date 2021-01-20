@@ -6,13 +6,13 @@ It is still in development, but you can view the demo here.
 <a href="https://bimpe.vercel.app/"><strong>Explore Demo »</strong></a>
 
 <p align="center">
-
+<!-- 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge)
 ![Travis (.com) branch](https://img.shields.io/travis/com/Sax-Yusuph/Web-Dashboard-UI/main?style=for-the-badge)
 ![Coveralls github](https://img.shields.io/coveralls/github/Sax-Yusuph/Web-Dashboard-UI?logo=c&logoColor=%234caf50&style=for-the-badge)
 ![GitHub](https://img.shields.io/github/license/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/Sax-Yusuph/Web-Dashboard-UI?label=Forks&style=for-the-badge)
-![GitHub package.json version](https://img.shields.io/github/package-json/v/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge&color=%23ff6800)
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Sax-Yusuph/Web-Dashboard-UI?style=for-the-badge&color=%23ff6800) -->
 
 </p>
 
