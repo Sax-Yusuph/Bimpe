@@ -1,4 +1,5 @@
 import dialogflow from '@google-cloud/dialogflow'
+
 import { v4 as uuidv4 } from 'uuid'
 import { QueryResponse } from '../interfaces'
 
@@ -36,9 +37,9 @@ export default async function queryResponse(query: string): QueryResponse {
   // console.log(`  Query: ${result?.queryText}`)
   // console.log(`  Response: ${result?.fulfillmentText}`)
   // if (result?.intent) {
-  // 	console.log(`  Intent: ${result.intent.displayName}`)
+  //   console.log(`  Intent: ${result.intent.displayName}`)
   // } else {
-  // 	console.log(`  No intent matched.`)
+  //   console.log(`  No intent matched.`)
   // }
   return result
 }

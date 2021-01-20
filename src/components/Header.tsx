@@ -4,7 +4,7 @@ import React from 'react'
 export default function Header(): JSX.Element {
   return (
     <Flex
-      bg="#00adbc"
+      bg="rgb(118, 101, 160)"
       backgroundImage="url(/headerbg.png)"
       shadow="md"
       w="100%"

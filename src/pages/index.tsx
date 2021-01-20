@@ -9,6 +9,7 @@ import { testData } from '../mock/dats'
 import { getMessageResponse } from '../functions/messenger'
 import { QUERY_URL } from '../variables'
 import { Conversation } from '../models/conversation'
+import Meta from '../components/Meta'
 
 const Index = (): JSX.Element => {
   const [chats, setChats] = useState<Conversation[]>(testData)
@@ -31,6 +32,7 @@ const Index = (): JSX.Element => {
   }
   return (
     <Container height="100vh" overflow="hidden">
+      <Meta />
       <Header />
       <Container
         bg={'blue.800'}

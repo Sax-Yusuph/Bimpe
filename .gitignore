@@ -33,6 +33,7 @@ yarn-error.log*
 /config
 test.css
 test.json
+test.js
 
 # vercel
 .vercel

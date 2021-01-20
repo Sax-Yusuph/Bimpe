@@ -76,7 +76,7 @@ export default function InputBox({
           mr={3}
           shadow="lg"
           bg="rgb(246,105,62)"
-          icon={<RiSendPlane2Line fontSize={18} />}
+          icon={<RiSendPlane2Line fontSize={18} color="#fff" />}
           boxSize={12}
           onClick={handleSubmit}
           _hover={{
