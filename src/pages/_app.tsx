@@ -1,4 +1,3 @@
-import 'emoji-mart/css/emoji-mart.css'
 import theme from '../theme'
 
 import { ChakraProvider } from '@chakra-ui/react'
