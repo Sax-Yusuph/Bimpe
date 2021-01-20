@@ -4,74 +4,74 @@
      "lang": "en",
      "description": "Your interactive assistant",
      "start_url": "https://bimpe.vercel.app/",
-     "background_color": "#7665a0",
-     "theme_color": "#7665a0",
+     "background_color": "#604580",
+     "theme_color": "#604580",
      "dir": "ltr",
      "display": "standalone",
      "orientation": "portrait",
      "icons": [
       {
-       "src": "/icon/android-icon-192x192.png",
+       "src": "/icon/bimpe192x192.png",
        "type": "image/png",
        "sizes": "192x192"
       },
       {
-       "src": "/icon/apple-icon-180x180.png",
+       "src": "/icon/bimpe180x180.png",
        "type": "image/png",
        "sizes": "180x180"
       },
       {
-       "src": "/icon/apple-icon-152x152.png",
+       "src": "/icon/bimpe152x152.png",
        "type": "image/png",
        "sizes": "152x152"
       },
       {
-       "src": "/icon/apple-icon-144x144.png",
+       "src": "/icon/bimpe144x144.png",
        "type": "image/png",
        "sizes": "144x144"
       },
       {
-       "src": "/icon/apple-icon-120x120.png",
+       "src": "/icon/bimpe120x120.png",
        "type": "image/png",
        "sizes": "120x120"
       },
       {
-       "src": "/icon/apple-icon-114x114.png",
+       "src": "/icon/bimpe114x114.png",
        "type": "image/png",
        "sizes": "114x114"
       },
       {
-       "src": "/icon/favicon-96x96.png",
+       "src": "/icon/bimpe96x96.png",
        "type": "image/png",
        "sizes": "96x96"
       },
       {
-       "src": "/icon/apple-icon-76x76.png",
+       "src": "/icon/bimpe76x76.png",
        "type": "image/png",
        "sizes": "76x76"
       },
       {
-       "src": "/icon/apple-icon-72x72.png",
+       "src": "/icon/bimpe76x76.png",
        "type": "image/png",
        "sizes": "72x72"
       },
       {
-       "src": "/icon/apple-icon-60x60.png",
+       "src": "/icon/bimpe60x60.png",
        "type": "image/png",
        "sizes": "60x60"
       },
       {
-       "src": "/icon/apple-icon-57x57.png",
+       "src": "/icon/bimpe57x57.png",
        "type": "image/png",
        "sizes": "57x57"
       },
       {
-       "src": "/icon/favicon-32x32.png",
+       "src": "/icon/bimpe32x32.png",
        "type": "image/png",
        "sizes": "32x32"
       },
       {
-       "src": "/icon/favicon-16x16.png",
+       "src": "/icon/bimpe16x16.png",
        "type": "image/png",
        "sizes": "16x16"
       }

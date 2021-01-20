@@ -6,7 +6,7 @@ export default function Header(): JSX.Element {
     <Flex
       bg="rgb(118, 101, 160)"
       backgroundImage="url(/headerbg.png)"
-      shadow="md"
+      shadow="lg"
       w="100%"
       p={5}
       py={2}
