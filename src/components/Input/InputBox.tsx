@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Box, Flex, IconButton, Textarea } from '@chakra-ui/react'
+import { Box, Flex, IconButton, Input } from '@chakra-ui/react'
 import { FormEvent, MouseEvent } from 'react'
 import { RiSendPlane2Line, RiUserSmileLine } from 'react-icons/ri'
-import { InputBoxProps } from '../interfaces'
+import { InputBoxProps } from '../../interfaces'
 import EmojiPicker from './EmojiPicker'
 
 export default function InputBox({
@@ -55,18 +55,25 @@ export default function InputBox({
         />
         <Box flex={1} mr={2}>
           <form onSubmit={handleSubmit}>
-            <Textarea
-              cols={1}
-              rows={1}
+            <Input
+              // ref={ref}
+              // cols={1}
+              // rows={1}
               color="black"
               rounded="lg"
               height="100%"
               variant="flush"
               resize="none"
-              placeholder="start texting"
               value={inputState}
-              mr={3}
+              mx={3}
+              p={0}
+              autoFocus={true}
               onChange={(e) => setInput(e.target.value)}
+              // onKeyUp={(e) => {
+              //   if (e.key == 'Enter') {
+              //     sendMessage(inputState)
+              //   }
+              // }}
             />
           </form>
         </Box>

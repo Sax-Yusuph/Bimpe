@@ -6,7 +6,7 @@ export default function Header(): JSX.Element {
     <Flex
       bg="rgb(118, 101, 160)"
       backgroundImage="url(/headerbg.png)"
-      shadow="lg"
+      shadow="2xl"
       w="100%"
       p={5}
       py={2}
@@ -23,7 +23,13 @@ export default function Header(): JSX.Element {
           <Text fontSize="lg" fontWeight="bold" textShadow="sm">
             Bimpe
           </Text>
-          <Text fontSize="sm" mt={-5}>
+          <Text
+            fontSize="sm"
+            mt={-5}
+            ml={'-20px'}
+            // fontWeight="bold"
+            textShadow="sm"
+          >
             online
           </Text>
         </VStack>

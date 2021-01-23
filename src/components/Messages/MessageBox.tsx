@@ -1,9 +1,17 @@
 import { Box } from '@chakra-ui/react'
-import React from 'react'
-import { MessageBoxProps } from '../interfaces'
-import Chat from './Chat'
+import React, { useRef, useEffect } from 'react'
+import { MessageBoxProps } from '../../interfaces'
+import Chat from './Chats/Chat'
 
 export default function MessageBox({ chats }: MessageBoxProps): JSX.Element {
+  const endMessageRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    scrollToBottom()
+  }, [chats])
+
+  const scrollToBottom = () => {
+    endMessageRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }
   return (
     <Box
       flex={1}
@@ -17,6 +25,7 @@ export default function MessageBox({ chats }: MessageBoxProps): JSX.Element {
       {chats?.map((chat) => (
         <Chat key={chat.id} chat={chat} />
       ))}
+      <div ref={endMessageRef} />
     </Box>
   )
 }
