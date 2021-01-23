@@ -32,7 +32,7 @@ const ChartContainer = (props: FlexProps): JSX.Element => {
       w={['100%', null, '100%', '80%']}
       h={['100vh', null, '100vh', 'auto']}
       overflow="hidden"
-      borderRadius="md"
+      borderRadius={[0, null, null, 'md']}
       mt={largeScreenProps?.mt}
       borderBottom={largeScreenProps?.borderBottom}
       borderBottomColor={largeScreenProps?.borderBottomColor}

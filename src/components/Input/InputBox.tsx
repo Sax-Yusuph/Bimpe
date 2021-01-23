@@ -80,9 +80,11 @@ export default function InputBox({
           icon={<RiSendPlane2Line fontSize={18} color="#fff" />}
           boxSize={12}
           onClick={handleSubmit}
+          transition="0.3s"
           _hover={{
-            bg: '#eb9a04',
+            bg: '#5a4886',
             outline: 'none',
+            transform: 'scale(0.9)',
           }}
           _active={{
             outline: 'none',

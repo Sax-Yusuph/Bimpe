@@ -31,6 +31,12 @@ export default function Meta(): JSX.Element {
       />
       <link rel="apple-touch-icon" href="/bimpeIcon.png"></link>
       <meta name="theme-color" content="#604580" />
+      {/* <style>
+        *{
+         ' scrollbar-color': 'rgba(0,0,0,.2)';
+          'scrollbar-width': 'thin'
+        }
+      </style> */}
     </Head>
   )
 }
