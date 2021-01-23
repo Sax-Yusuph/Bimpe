@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Container } from '../components/Container'
-// import { DarkModeSwitch } from '../components/DarkModeSwitch'
+import ChartContainer from '../components/ChartContainer'
 import Header from '../components/Header'
 import MessageBox from '../components/Messages/MessageBox'
 import InputBox from '../components/Input/InputBox'
@@ -10,6 +10,7 @@ import { getMessageResponse } from '../functions/messenger'
 import { QUERY_URL } from '../variables'
 import { Conversation } from '../models/conversation'
 import Meta from '../components/Meta'
+import { Flex } from '@chakra-ui/react'
 
 const Index = (): JSX.Element => {
   const [chats, setChats] = useState<Conversation[]>(testData)
@@ -33,21 +34,32 @@ const Index = (): JSX.Element => {
   return (
     <Container height="100vh" overflow="hidden">
       <Meta />
-      <Header />
-      <Container
-        bg={'blue.800'}
-        w="100vw"
-        overflow="hidden"
-        h="100vh"
-        // px={1}
-      >
-        <MessageBox chats={chats} />
-        <InputBox
-          sendMessage={sendMessage}
-          setInput={setInput}
-          inputState={input}
-        />
-      </Container>
+      <Flex
+        display={['none', null, 'none', 'block']}
+        bg="rgb(118, 101, 160)"
+        backgroundImage="url(/headerbg.png)"
+        height={'20vh'}
+        w="100%"
+        mb={'-35px'}
+      />
+      <ChartContainer>
+        <Header />
+        <Container
+          bg={'#e5ddd5'}
+          backgroundImage="url(/bg.png)"
+          w="100%"
+          overflow="hidden"
+          h="100%"
+          px={1}
+        >
+          <MessageBox chats={chats} />
+          <InputBox
+            sendMessage={sendMessage}
+            setInput={setInput}
+            inputState={input}
+          />
+        </Container>
+      </ChartContainer>
 
       {/* <DarkModeSwitch /> */}
     </Container>

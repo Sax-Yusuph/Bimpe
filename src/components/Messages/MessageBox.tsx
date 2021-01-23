@@ -13,19 +13,11 @@ export default function MessageBox({ chats }: MessageBoxProps): JSX.Element {
     endMessageRef.current?.scrollIntoView({ behavior: 'smooth' })
   }
   return (
-    <Box
-      flex={1}
-      bg={'rgb(231, 232, 234)'}
-      backgroundImage="url(/bg.png)"
-      h="auto"
-      w="100%"
-      px={5}
-      overflowY="auto"
-    >
+    <Box flex={1} h="auto" w="100%" px={5} overflowY="auto">
       {chats?.map((chat) => (
         <Chat key={chat.id} chat={chat} />
       ))}
-      <div ref={endMessageRef} />
+      <div ref={endMessageRef} style={{ height: '5px' }} />
     </Box>
   )
 }

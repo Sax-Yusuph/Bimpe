@@ -19,13 +19,7 @@ export default function InputBox({
     sendMessage(inputState)
   }
   return (
-    <Flex
-      p={2}
-      bg="rgb(231, 232, 234)"
-      backgroundImage="url(/bg.png)"
-      w="100%"
-      justifyContent="space-between"
-    >
+    <Flex p={2} w="100%" justifyContent="space-between">
       <Flex
         flex={1}
         mx={2}
@@ -82,7 +76,7 @@ export default function InputBox({
           aria-label="submit"
           mr={3}
           shadow="lg"
-          bg="rgb(246,105,62)"
+          bg="#7665a0"
           icon={<RiSendPlane2Line fontSize={18} color="#fff" />}
           boxSize={12}
           onClick={handleSubmit}
