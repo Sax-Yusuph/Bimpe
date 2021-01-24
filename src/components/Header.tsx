@@ -16,8 +16,8 @@ export default function Header(): JSX.Element {
       backgroundImage={isLargeScreen ? undefined : 'url(/headerbg.png)'}
       shadow="2xl"
       w="100%"
-      p={5}
-      py={2}
+      p={4}
+      py={1}
       pos="static"
     >
       <HStack spacing={3}>
@@ -29,21 +29,14 @@ export default function Header(): JSX.Element {
           borderRadius="full"
         />
         <VStack
-          spacing={1}
+          spacing={'-5px'}
           color={isLargeScreen ? 'gray.700' : 'white'}
           justifyItems="flex-start"
         >
           <Text fontSize="lg" fontWeight="bold" textShadow="sm">
             Bimpe
           </Text>
-          <Text
-            fontSize="sm"
-            mt={-5}
-            ml={'-20px'}
-            // fontWeight="bold"
-            marginInlineStart={-2}
-            textShadow="sm"
-          >
+          <Text fontSize="sm" textShadow="sm">
             online
           </Text>
         </VStack>

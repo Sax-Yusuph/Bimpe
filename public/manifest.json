@@ -3,7 +3,7 @@
      "name": "Bimpe",
      "lang": "en",
      "description": "Your interactive assistant",
-     "start_url": "https://bimpe.vercel.app/",
+     "start_url": "/",
      "background_color": "#604580",
      "theme_color": "#604580",
      "dir": "ltr",

@@ -7,6 +7,7 @@ import EmojiPicker from './EmojiPicker'
 
 export default function InputBox({
   sendMessage,
+  sendIconMessage,
   inputState,
   setInput,
 }: InputBoxProps): JSX.Element {
@@ -27,14 +28,15 @@ export default function InputBox({
         alignItems="center"
         py={2}
         bg="white"
-        rounded="2xl"
+        rounded="lg"
         pos="relative"
       >
         <IconButton
           variant="ghost"
-          rounded="3xl"
+          rounded="full"
+          ml={2}
           aria-label="submit"
-          icon={<RiUserSmileLine fontSize={24} color="#718096" />}
+          icon={<RiUserSmileLine size={'1.3rem'} color="#718096" />}
           onClick={() => setShowEmoji(!showEmoji)}
           _hover={{
             bg: 'transparent',
@@ -74,11 +76,11 @@ export default function InputBox({
         <IconButton
           rounded="lg"
           aria-label="submit"
-          mr={3}
+          mr={2}
           shadow="lg"
-          bg="#7665a0"
-          icon={<RiSendPlane2Line fontSize={18} color="#fff" />}
-          boxSize={12}
+          bg="rgb(246, 105, 62)"
+          icon={<RiSendPlane2Line fontSize={16} color="#fff" />}
+          // boxSize={12}
           onClick={handleSubmit}
           transition="0.3s"
           _hover={{
@@ -95,7 +97,12 @@ export default function InputBox({
             border: 'none',
           }}
         />{' '}
-        {showEmoji && <EmojiPicker />}
+        {showEmoji && (
+          <EmojiPicker
+            sendIconMessage={sendIconMessage}
+            setShowEmoji={setShowEmoji}
+          />
+        )}
       </Flex>
     </Flex>
   )

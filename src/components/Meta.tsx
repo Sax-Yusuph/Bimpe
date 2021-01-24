@@ -18,10 +18,10 @@ export default function Meta(): JSX.Element {
 
       <link rel="manifest" href="/manifest.json" />
       <link
-        href="/icon/bimpe16x16.png"
+        href="/icon/bimpe32x32.png"
         rel="icon"
         type="image/png"
-        sizes="16x16"
+        sizes="32x32"
       />
       <link
         href="/icon/bimpe32x32.png"

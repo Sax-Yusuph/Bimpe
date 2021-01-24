@@ -3,6 +3,7 @@ import React from 'react'
 import { ChatProps } from '../../../interfaces'
 import Linkify from 'react-linkify'
 import Callout from './Callout'
+import detectEmoji from '../../../utils/DetectEmoji'
 
 export default function Chat({ chat }: ChatProps): JSX.Element {
   const {
@@ -12,6 +13,13 @@ export default function Chat({ chat }: ChatProps): JSX.Element {
   const data = text?.text
   const isUser = who == 'user'
   const currentBg = isUser ? '#dcf8c6' : '#f7fafc'
+  let isEmoji = false
+  let chatText = "something's not right"
+
+  if (data?.length) {
+    isEmoji = detectEmoji(data[0])
+    chatText = data[0]
+  }
 
   return (
     <Flex justifyContent={isUser ? 'flex-end' : 'flex-start'} mt={2}>
@@ -28,8 +36,8 @@ export default function Chat({ chat }: ChatProps): JSX.Element {
       >
         <Callout isUser={isUser} currentBg={currentBg} />
         <Linkify>
-          <Text color="gray.800">
-            {data?.length ? data[0] : "something's not right"}
+          <Text color="gray.800" fontSize={isEmoji ? '1.8rem' : undefined}>
+            {chatText}
           </Text>
         </Linkify>
       </Box>

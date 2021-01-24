@@ -5,11 +5,13 @@ import { Conversation } from '../models/conversation'
 export interface MessageBoxProps {
   chats: Conversation[]
 }
+export type SendIconMessage = (icon: string) => void
 
 export interface InputBoxProps {
   sendMessage: (text: string) => void
   inputState: string
   setInput: Dispatch<SetStateAction<string>>
+  sendIconMessage: SendIconMessage
 }
 
 export interface IChat {
