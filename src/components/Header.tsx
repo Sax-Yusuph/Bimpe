@@ -12,7 +12,7 @@ export default function Header(): JSX.Element {
   const isLargeScreen = useBreakpointValue({ xl: true })
   return (
     <Flex
-      bg="rgb(187, 187, 187)"
+      bg={isLargeScreen ? 'rgb(187, 187, 187)' : '#604580'}
       backgroundImage={isLargeScreen ? undefined : 'url(/headerbg.png)'}
       shadow="2xl"
       w="100%"
